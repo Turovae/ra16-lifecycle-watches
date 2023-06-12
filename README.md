@@ -1,3 +1,7 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/7gy6yl3t544fjr74?svg=true)](https://ci.appveyor.com/project/Turovae/ra16-lifecycle-watches)
+
+---
+
 Мировые часы
 ===
 
