@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AddWatchForm.css';
 
-function AddWatchForm({onAddWatch}: { onAddWatch: Function }) {
+function AddWatchForm({onAddWatch}: { onAddWatch: CallableFunction }) {
   const initStateForm = {
     name: '',
     timezone: undefined,

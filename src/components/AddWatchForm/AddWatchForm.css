@@ -1,5 +1,6 @@
 .add-watch-form {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .form-column {
