@@ -36,8 +36,8 @@ function App() {
   return (
     <div className='container'>
       <h2>This is app container</h2>
-      <AddWatchForm addWatch={addWatch} />
-      <Watches watches={watches} />
+      <AddWatchForm onAddWatch={addWatch} />
+      <Watches watches={watches} onDelete={deleteWatch} />
     </div>
   )
 }

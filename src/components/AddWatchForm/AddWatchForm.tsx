@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AddWatchForm.css';
 
-function AddWatchForm({addWatch}: { addWatch: Function }) {
+function AddWatchForm({onAddWatch}: { onAddWatch: Function }) {
   const initStateForm = {
     name: '',
     timezone: undefined,
@@ -24,8 +24,8 @@ function AddWatchForm({addWatch}: { addWatch: Function }) {
     evt.preventDefault();
     console.log(evt);
     console.log('submit');
-    console.log(addWatch);
-    addWatch(stateForm);
+    console.log(onAddWatch);
+    onAddWatch(stateForm);
     setStateForm(initStateForm);
   }
 
