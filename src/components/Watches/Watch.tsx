@@ -2,6 +2,7 @@ import React from "react";
 import WatchProps from "../../interfaces/watch";
 import moment from "moment";
 import './Watch.css';
+import WatchHand from "./WatchHand";
 
 interface WatchP extends WatchProps {
   onDelete: CallableFunction,
@@ -48,11 +49,11 @@ type State = {
 //   )
 // }
 
-class Watch extends React.Component {
+class Watch extends React.Component<WatchP> {
   state: State;
   timerID: number | undefined;
 
-  constructor(props: Readonly<WatchP>) {
+  constructor(props: WatchP) {
     super(props);
     this.state = {
       time: new Date(),
@@ -62,10 +63,10 @@ class Watch extends React.Component {
   }
 
   componentDidMount(): void {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+    // this.timerID = setInterval(
+    //   () => this.tick(),
+    //   200
+    // );
   }
 
   componentWillUnmount(): void {
@@ -80,6 +81,7 @@ class Watch extends React.Component {
 
   render() {
     const { id, name, timezone, onDelete } = this.props;
+    console.log(name);
     const timeOfZone = moment(this.state.time).utcOffset(timezone);
     const hours = timeOfZone.hours();
     const minuts = timeOfZone.minutes();
@@ -93,16 +95,10 @@ class Watch extends React.Component {
     return (
       <div className="watch">
         <h4 className="watch-name">{name}</h4>
-        <div className="watch-dgt">
-          {moment(this.state.time).utcOffset(timezone).format('HH:mm:ss')}
-        </div>
         <div className="watch-face">
-          {/* <div>{hours}-{minuts}-{seconds}</div> */}
-          <div className="watch-arrow watch-arrow-hours"
-            style={{
-              transform: `rotate(${seconds * 6}deg)`
-            }}
-            ></div>
+          <WatchHand timepart={seconds} type="seconds" />
+          <WatchHand timepart={minuts} type="minuts" />
+          <WatchHand timepart={hours} type="hours" />
         </div>
         <button
           className="watch-btn"
