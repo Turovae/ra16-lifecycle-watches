@@ -10,9 +10,6 @@ function AddWatchForm({onAddWatch}: { onAddWatch: CallableFunction }) {
   const [stateForm, setStateForm] = useState(initStateForm);
 
   const changeField = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(evt.target.name);
-    console.log(evt.target.value);
-    console.log(stateForm);
     const { name, value } = evt.target;
     setStateForm({
       ...stateForm,
@@ -41,6 +38,7 @@ function AddWatchForm({onAddWatch}: { onAddWatch: CallableFunction }) {
           onChange={changeField}
           value={stateForm.name}
           required
+          placeholder='Moscow'
           />
       </div>
       <div className="form-column">
@@ -53,7 +51,8 @@ function AddWatchForm({onAddWatch}: { onAddWatch: CallableFunction }) {
           onChange={changeField}
           value={stateForm.timezone || ''}
           required
-          pattern='-?\d+'
+          pattern='[\-\+]\d{1, 2}'
+          placeholder='+03 или -7'
           />
       </div>
       <div className="form-column">

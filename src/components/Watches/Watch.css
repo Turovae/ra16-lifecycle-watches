@@ -1,5 +1,4 @@
 .watch {
-  border: 1px solid black;
   margin-right: 10px;
   width: 150px;
   position: relative;
@@ -21,8 +20,8 @@
   background-color: #fff;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2px;
+  right: 5px;
 }
 
 .watch-face {
@@ -35,14 +34,11 @@
 }
 
 .watch-hand {
-  /* border-top: 10px solid black; */
-  /* border-bottom: 10px solid transparent; */
   width: 0;
   height: 0;
   top: 50px;
   left: 50px;
   position: absolute;
-  transform: rotate(45deg);
 }
 
 .watch-hand-line {
@@ -72,7 +68,6 @@
   top: -15px;
   width: 0;
   height: 0;
-  /* background-color: red; */
   border: 5px solid transparent;
   border-width: 10px 5px;
   border-bottom: 10px solid black;

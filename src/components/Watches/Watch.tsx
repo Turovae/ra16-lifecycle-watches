@@ -63,10 +63,10 @@ class Watch extends React.Component<WatchP> {
   }
 
   componentDidMount(): void {
-    // this.timerID = setInterval(
-    //   () => this.tick(),
-    //   200
-    // );
+    this.timerID = setInterval(
+      () => this.tick(),
+      200
+    );
   }
 
   componentWillUnmount(): void {
@@ -81,7 +81,7 @@ class Watch extends React.Component<WatchP> {
 
   render() {
     const { id, name, timezone, onDelete } = this.props;
-    console.log(name);
+    // console.log(name);
     const timeOfZone = moment(this.state.time).utcOffset(timezone);
     const hours = timeOfZone.hours();
     const minuts = timeOfZone.minutes();
