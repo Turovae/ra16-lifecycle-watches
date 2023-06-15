@@ -14,7 +14,7 @@ function WatchHand({ timepart, type }: WatchHandProps) {
       degree = timepart * 6;
       break;
     default:
-      degree = timepart * 15;
+      degree = timepart * 30;
   }
   return (
     <div className="watch-hand"
